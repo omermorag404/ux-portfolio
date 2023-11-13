@@ -10,8 +10,8 @@ export default {
   gray500: "#232323",
   //   Blue
   blue100: "#e3f6f5",
-  blue200: "#bae8e8",
-  blue300: "#bae8e8",
-  blue400: "#2c698d",
-  blue500: "#272643",
+  blue200: "#2C74B3",
+  blue300: "#205295",
+  blue400: "#144272",
+  blue500: "#0A2647",
 };

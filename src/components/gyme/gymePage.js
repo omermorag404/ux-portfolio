@@ -1,72 +1,51 @@
-import styled from "styled-components";
+import MediaQuery from "react-responsive";
+import { Button } from "../buttons/button";
 import colors from "../styles/colors";
-import spacing from "../styles/spacing";
-import { H1, H3, P } from "../styles/typography";
+import { Content, Layout, Photo, Section } from "../styles/layout";
+import "../styles/style.css";
+import { H1, H3, H5, P } from "../styles/typography";
 import { Goals } from "./goals";
 import gymeData from "./gymeData";
 import { Persona } from "./persona";
 import { Research } from "./researchResults";
-import MediaQuery from "react-responsive";
-import "../styles/style.css";
 // images
 import cover from "../img/cover.jpg";
 import gym from "../img/gym.png";
+import lowfi from "../img/lowfi.png";
 import main from "../img/main.png";
 import sportapp from "../img/sportapp.png";
 import sticky from "../img/sticky.jpg";
 import stretching from "../img/stretching.png";
-import trainer from "../img/trainer.png";
 import weights from "../img/weights.png";
-import lowfi from "../img/lowfi.png";
+import styled from "styled-components";
 export const GymeApp = () => {
-  const Section = styled.div`
-    display: flex;
-    max-width: 1280;
-    background-color: ${(props) => props.color || colors.white};
-    justify-content: center;
-    align-items: stretch;
-    gap: ${spacing.lg};
-    flex-wrap: wrap;
-    padding: 40px 0;
-  `;
-  const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: ${(props) => props.alignItems || "flex-start"};
-    gap: ${spacing.sm};
-    width: ${(props) => props.width || "30vw"};
-
+  const Quate = styled.h1`
+    margin: 0 -0.4em;
+    font-size: 60px;
+    padding: 0.1em 0.4em;
+    border-radius: 0.8em 0.3em;
+    background: transparent;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 225, 0, 0.1),
+      rgba(255, 225, 0, 0.7) 4%,
+      rgba(255, 225, 0, 0.3)
+    );
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     @media (max-width: 767px) {
-      width: 80vw;
- 
+      font-size: 32px;
+    }
   `;
 
-  const Layout = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: stretch;
-  `;
-  const Photo = styled.div`
-    width: 100%;
-    height: 500px;
-    background-image: url(${(props) => props.photo});
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-  `;
   return (
     <Layout>
-      <Photo photo={cover}>
-        <div>
+      <Section>
+        <Content alignItems="center">
           <H1>GYMe</H1>
-        </div>
-      </Photo>
-
+          <H5>UX project | 2019</H5>
+        </Content>
+      </Section>
       <Section>
         <Content>
           <H3>{gymeData.background.title}</H3>
@@ -88,10 +67,13 @@ export const GymeApp = () => {
         </Content>
         <img src={weights} alt="Gym" width={"315px"} />
       </Section>
-      <Section color={colors.gray100}>
+      <Section color={colors.blue300}>
         {gymeData.data.map((number, index) => (
           <Research key={index} gymeData={number} />
         ))}
+      </Section>
+      <Section>
+        <Quate>"I just don't have time to workout"</Quate>
       </Section>
       <Section>
         {gymeData.persona.map((person, index) => (
@@ -107,37 +89,28 @@ export const GymeApp = () => {
       </Section>
       <Section>
         <MediaQuery minWidth={"767px"}>
-          <Content width="100%" alignItems="center">
-            <img src={lowfi} alt="Gym" width="780px" />
-          </Content>
+          <img src={lowfi} alt="Gym" width="780px" />
         </MediaQuery>
         <MediaQuery maxWidth={"768px"}>
-          <Content width="100%" alignItems="center">
-            <img src={lowfi} alt="Gym" width="315px" />
-          </Content>
+          <img src={lowfi} alt="Gym" width="315px" />
         </MediaQuery>
       </Section>
       <Section>
         <Content>
           <H3>{gymeData.solution.title}</H3>
           <P>{gymeData.solution.content}</P>
-        </Content>
-        <img src={sportapp} alt="Gym" width={"315px"} />
-      </Section>
-      <Section>
-        <img src={main} alt="Gym" width={"250px"} />
-        <Content>
           <P>{gymeData.solution.content2}</P>
         </Content>
+        <img src={main} alt="Gym" width={"250px"} />
       </Section>
       <Section>
+        <img src={sportapp} alt="Gym" width={"315px"} />
         <Content>
           <P>{gymeData.solution.content3}</P>
+          <a href={gymeData.link} target="blank">
+            <Button>Play with the prototype</Button>
+          </a>
         </Content>
-        <img src={trainer} alt="Gym" width={"315px"} />
-      </Section>
-      <Section>
-        <button>Play with the prototype</button>
       </Section>
     </Layout>
   );

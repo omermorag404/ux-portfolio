@@ -6,5 +6,5 @@ export default {
   lg: "24px",
   xl: "32px",
   xxl: "40px",
-  xxxl: "44px",
+  xxxl: "48px",
 };

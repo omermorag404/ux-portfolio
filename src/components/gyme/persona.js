@@ -24,7 +24,7 @@ export const Persona = ({ gymeData }) => {
     box-shadow: ${shadows.low};
     padding: ${spacing.md};
     border-radius: 8px;
-    border: 1px solid ${colors.blue300};
+    border: 1px solid ${colors.gray100};
     width: 50vw;
 
     @media (max-width: 767px) {
@@ -33,19 +33,19 @@ export const Persona = ({ gymeData }) => {
       align-items: center;
       gap: ${spacing.xl};
       box-shadow: ${shadows.low};
-      border: 1px solid ${colors.blue300};
+      border: 1px solid ${colors.gray100};
       padding: ${spacing.lg};
       border-radius: 8px;
       width: 80vw;
     }
   `;
   const Photo = styled.div`
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     background-image: url(${(props) => props.photo});
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
+    border-radius: 0 24px 0 24px;
     flex: 1 0 200;
   `;
   const Content = styled.div`
@@ -68,11 +68,10 @@ export const Persona = ({ gymeData }) => {
       <Content>
         <H3>{gymeData.name}</H3>
 
-        <H4>
-          {gymeData.age} | {gymeData.location}
-        </H4>
+        <H5>
+          {gymeData.age} | {gymeData.location} | {gymeData.proffesion}
+        </H5>
 
-        <H4>{gymeData.H4roffesion}</H4>
         <P>{gymeData.bio}</P>
       </Content>
     </PersonaLayout>

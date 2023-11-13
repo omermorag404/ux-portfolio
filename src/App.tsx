@@ -1,4 +1,4 @@
-import "./App.css";
+import "./components/styles/style.css";
 import { GymeApp } from "./components/gyme/gymePage";
 
 function App() {

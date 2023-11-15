@@ -1,9 +1,9 @@
-import amir from "../img/amir.jpg";
-import vered from "../img/vered.jpg";
-import illan from "../img/illan.jpg";
-import kobi from "../img/kobi.jpg";
+import amir from "../img/gyme/amir.jpg";
+import vered from "../img/gyme/vered.jpg";
+import illan from "../img/gyme/illan.jpg";
+import kobi from "../img/gyme/kobi.jpg";
 import styled from "styled-components";
-import { H5, H4, H3, P } from "../styles/typography";
+import { H5, H4, H3, P, H6 } from "../styles/typography";
 import spacing from "../styles/spacing";
 import shadows from "../styles/shadows";
 import colors from "../styles/colors";
@@ -21,11 +21,11 @@ export const Persona = ({ gymeData }) => {
     flex-direction: row;
     align-items: flex-start;
     gap: ${spacing.xl};
-    box-shadow: ${shadows.low};
+    box-shadow: ${shadows.medium};
     padding: ${spacing.md};
     border-radius: 8px;
     border: 1px solid ${colors.gray100};
-    width: 50vw;
+    width: clamp(315px, 40%, 1280px);
 
     @media (max-width: 767px) {
       display: flex;
@@ -40,12 +40,12 @@ export const Persona = ({ gymeData }) => {
     }
   `;
   const Photo = styled.div`
-    width: 180px;
-    height: 180px;
+    width: 100px;
+    height: 100px;
     background-image: url(${(props) => props.photo});
     background-size: cover;
     background-position: center;
-    border-radius: 0 24px 0 24px;
+    border-radius: 4px;
     flex: 1 0 200;
   `;
   const Content = styled.div`
@@ -66,11 +66,11 @@ export const Persona = ({ gymeData }) => {
         <Photo photo={photoMap[gymeData.photo]}></Photo>
       </Content>
       <Content>
-        <H3>{gymeData.name}</H3>
+        <H4>{gymeData.name}</H4>
 
-        <H5>
+        <H6 color={colors.gray400}>
           {gymeData.age} | {gymeData.location} | {gymeData.proffesion}
-        </H5>
+        </H6>
 
         <P>{gymeData.bio}</P>
       </Content>

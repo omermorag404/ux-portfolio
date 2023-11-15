@@ -3,10 +3,11 @@ import colors from "./colors";
 import textSize from "./textSize";
 
 export const H1 = styled.h1`
-  font-size: ${textSize.xxxl};
-  color: ${(props) => props.color || colors.blue400};
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
+  font-size: ${(props) => props.fontSize || textSize.xxxl};
+  color: ${(props) => props.color || colors.purple400};
+  font-family: "Lato", sans-serif;
+
+  font-weight: 700;
   text-align: ${(props) => props.textAlign || "left"};
   margin: 0;
 `;

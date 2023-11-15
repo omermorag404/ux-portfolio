@@ -1,5 +1,5 @@
 import "./components/styles/style.css";
-import { GymeApp } from "./components/gyme/gymePage";
+import { GymeApp } from "./pages/gymePage";
 
 function App() {
   return (

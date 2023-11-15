@@ -13,10 +13,10 @@ export const Research = ({ gymeData }) => {
 
   return (
     <Detail>
-      <H1 color="white" textAlign="center">
+      <H1 color={colors.purple400} textAlign="center">
         {gymeData.number}
       </H1>
-      <P color={colors.blue100} textAlign="center">
+      <P color={colors.gray500} textAlign="center">
         {gymeData.content}
       </P>
     </Detail>

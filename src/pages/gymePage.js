@@ -1,51 +1,29 @@
 import MediaQuery from "react-responsive";
-import { Button } from "../buttons/button";
-import colors from "../styles/colors";
-import { Content, Layout, Photo, Section } from "../styles/layout";
-import "../styles/style.css";
-import { H1, H3, H5, P } from "../styles/typography";
-import { Goals } from "./goals";
-import gymeData from "./gymeData";
-import { Persona } from "./persona";
-import { Research } from "./researchResults";
+import { Button } from "../components/buttons/button";
+import colors from "../components/styles/colors";
+import {
+  Content,
+  Layout,
+  ProjectCover,
+  Section,
+} from "../components/styles/layout";
+import "../components/styles/style.css";
+import { H3, P } from "../components/styles/typography";
+import { Goals } from "../components/gyme/goals";
+import gymeData from "../components/gyme/gymeData";
+import { Persona } from "../components/gyme/persona";
+import { Research } from "../components/gyme/researchResults";
 // images
-import cover from "../img/cover.jpg";
-import gym from "../img/gym.png";
-import lowfi from "../img/lowfi.png";
-import main from "../img/main.png";
-import sportapp from "../img/sportapp.png";
-import sticky from "../img/sticky.jpg";
-import stretching from "../img/stretching.png";
-import weights from "../img/weights.png";
-import styled from "styled-components";
+import gym from "../components/img/gyme/gym.png";
+import lowfi from "../components/img/gyme/lowfi.png";
+import main from "../components/img/gyme/main.png";
+import sticky from "../components/img/gyme/sticky.jpg";
+import stretching from "../components/img/gyme/stretching.png";
+import weights from "../components/img/gyme/weights.png";
 export const GymeApp = () => {
-  const Quate = styled.h1`
-    margin: 0 -0.4em;
-    font-size: 60px;
-    padding: 0.1em 0.4em;
-    border-radius: 0.8em 0.3em;
-    background: transparent;
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 225, 0, 0.1),
-      rgba(255, 225, 0, 0.7) 4%,
-      rgba(255, 225, 0, 0.3)
-    );
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    @media (max-width: 767px) {
-      font-size: 32px;
-    }
-  `;
-
   return (
     <Layout>
-      <Section>
-        <Content alignItems="center">
-          <H1>GYMe</H1>
-          <H5>UX project | 2019</H5>
-        </Content>
-      </Section>
+      <ProjectCover />
       <Section>
         <Content>
           <H3>{gymeData.background.title}</H3>
@@ -60,28 +38,26 @@ export const GymeApp = () => {
           <P>{gymeData.challenge.content}</P>
         </Content>
       </Section>
-      <Section>
+      <Section color={colors.gray100}>
         <Content>
           <H3>{gymeData.research.title}</H3>
           <P>{gymeData.research.content}</P>
         </Content>
         <img src={weights} alt="Gym" width={"315px"} />
       </Section>
-      <Section color={colors.blue300}>
+      <Section color={colors.gray100}>
         {gymeData.data.map((number, index) => (
           <Research key={index} gymeData={number} />
         ))}
       </Section>
-      <Section>
-        <Quate>"I just don't have time to workout"</Quate>
-      </Section>
+
       <Section>
         {gymeData.persona.map((person, index) => (
           <Persona key={index} gymeData={person} />
         ))}
       </Section>
 
-      <Section>
+      <Section color={colors.gray100}>
         <img src={sticky} alt="Gym" width={"315px"} />
         {gymeData.goals.map((goal, index) => (
           <Goals key={index} goalData={goal} />
@@ -100,17 +76,12 @@ export const GymeApp = () => {
           <H3>{gymeData.solution.title}</H3>
           <P>{gymeData.solution.content}</P>
           <P>{gymeData.solution.content2}</P>
-        </Content>
-        <img src={main} alt="Gym" width={"250px"} />
-      </Section>
-      <Section>
-        <img src={sportapp} alt="Gym" width={"315px"} />
-        <Content>
           <P>{gymeData.solution.content3}</P>
           <a href={gymeData.link} target="blank">
             <Button>Play with the prototype</Button>
           </a>
         </Content>
+        <img src={main} alt="Gym" width={"250px"} />
       </Section>
     </Layout>
   );

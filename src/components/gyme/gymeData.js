@@ -68,36 +68,35 @@ export default {
       photo: "illan",
     },
   ],
-  goals: [
-    {
-      title: "Business Goals",
-      goals: [
-        {
-          goal: "Work with different GYMs to increase the number of users.",
-        },
-        {
-          goal: "Premium plan and monthly subscription.",
-        },
-        {
-          goal: "Click ads.",
-        },
-      ],
-    },
-    {
-      title: "User Goals",
-      goals: [
-        {
-          goal: "Build a self-training plan",
-        },
-        {
-          goal: "Find the right workouts to rich the user personal goals",
-        },
-        {
-          goal: "Create social trainers community to help users find new friends and give the motivation to go to the GYM",
-        },
-      ],
-    },
-  ],
+  userGoals: {
+    title: "Business Goals",
+    goals: [
+      {
+        goal: "Work with different GYMs to increase the number of users.",
+      },
+      {
+        goal: "Premium plan and monthly subscription.",
+      },
+      {
+        goal: "Click ads.",
+      },
+    ],
+  },
+  businessGoals: {
+    title: "User Goals",
+    goals: [
+      {
+        goal: "Build a self-training plan",
+      },
+      {
+        goal: "Find the right workouts to rich the user personal goals",
+      },
+      {
+        goal: "Create social trainers community to help users find new friends and give the motivation to go to the GYM",
+      },
+    ],
+  },
+
   solution: {
     title: "Solution",
     content:

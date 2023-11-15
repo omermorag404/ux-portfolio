@@ -58,10 +58,20 @@ export const GymeApp = () => {
       </Section>
 
       <Section color={colors.gray100}>
+        {gymeData.businessGoals && (
+          <Goals
+            title={gymeData.businessGoals.title}
+            goals={gymeData.businessGoals.goals}
+          />
+        )}
+
         <img src={sticky} alt="Gym" width={"315px"} />
-        {gymeData.goals.map((goal, index) => (
-          <Goals key={index} goalData={goal} />
-        ))}
+        {gymeData.userGoals && (
+          <Goals
+            title={gymeData.userGoals.title}
+            goals={gymeData.userGoals.goals}
+          />
+        )}
       </Section>
       <Section>
         <MediaQuery minWidth={"767px"}>

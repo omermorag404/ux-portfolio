@@ -1,7 +1,7 @@
-import amir from "../img/gyme/amir.jpg";
-import vered from "../img/gyme/vered.jpg";
-import illan from "../img/gyme/illan.jpg";
-import kobi from "../img/gyme/kobi.jpg";
+import amir from "../assets/img/gyme/amir.jpg";
+import vered from "../assets/img/gyme/vered.jpg";
+import illan from "../assets/img/gyme/illan.jpg";
+import kobi from "../assets/img/gyme/kobi.jpg";
 import styled from "styled-components";
 import { H5, H4, H3, P, H6 } from "../styles/typography";
 import spacing from "../styles/spacing";

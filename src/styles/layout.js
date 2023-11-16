@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import colors from "./colors";
 import spacing from "./spacing";
-import sportapp from "../img/gyme/sportapp.png";
+import sportapp from "../assets/img/gyme/sportapp.png";
 
 export const Section = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ flex-wrap: wrap;
 justify-content: center; 
 align-items: ${(props) => props.alignItems || "flex-start"};
 gap: ${spacing.md};
-width: clamp(315px, 40%, 1280px);
+width: clamp(315px, 40%, 490px);
 
 @media (max-width: 767px) {
   width: 75vw;

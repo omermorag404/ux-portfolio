@@ -2,7 +2,7 @@ import spacing from "../styles/spacing";
 import { H3, P } from "../styles/typography";
 import styled from "styled-components";
 
-export const Goals = ({ title, goals }) => {
+export const List = ({ title, goals }) => {
   const Goal = styled.div`
     display: flex;
     flex-direction: column;

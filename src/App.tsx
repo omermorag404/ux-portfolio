@@ -1,11 +1,11 @@
-import "./components/styles/style.css";
+import "./styles/style.css";
 import { GymeApp } from "./pages/gymePage";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <GymeApp />
-    </div>
+    </>
   );
 }
 

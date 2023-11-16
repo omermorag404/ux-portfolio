@@ -1,25 +1,20 @@
 import MediaQuery from "react-responsive";
-import { Button } from "../components/buttons/button";
-import colors from "../components/styles/colors";
-import {
-  Content,
-  Layout,
-  ProjectCover,
-  Section,
-} from "../components/styles/layout";
-import "../components/styles/style.css";
-import { H3, P } from "../components/styles/typography";
-import { Goals } from "../components/gyme/goals";
-import gymeData from "../components/gyme/gymeData";
-import { Persona } from "../components/gyme/persona";
-import { Research } from "../components/gyme/researchResults";
+import { Button } from "../components/button";
+import colors from "../styles/colors";
+import { Content, Layout, ProjectCover, Section } from "../styles/layout";
+import "../styles/style.css";
+import { H3, P } from "../styles/typography";
+import { List } from "../components/list";
+import gymeData from "../data/gymeData";
+import { Persona } from "../components/persona";
+import { Research } from "../components/researchResults";
 // images
-import gym from "../components/img/gyme/gym.png";
-import lowfi from "../components/img/gyme/lowfi.png";
-import main from "../components/img/gyme/main.png";
-import sticky from "../components/img/gyme/sticky.jpg";
-import stretching from "../components/img/gyme/stretching.png";
-import weights from "../components/img/gyme/weights.png";
+import gym from "../assets/img/gyme/gym.png";
+import lowfi from "../assets/img/gyme/lowfi.png";
+import main from "../assets/img/gyme/main.png";
+import sticky from "../assets/img/gyme/sticky.jpg";
+import stretching from "../assets/img/gyme/stretching.png";
+import weights from "../assets/img/gyme/weights.png";
 export const GymeApp = () => {
   return (
     <Layout>
@@ -59,7 +54,7 @@ export const GymeApp = () => {
 
       <Section color={colors.gray100}>
         {gymeData.businessGoals && (
-          <Goals
+          <List
             title={gymeData.businessGoals.title}
             goals={gymeData.businessGoals.goals}
           />
@@ -67,7 +62,7 @@ export const GymeApp = () => {
 
         <img src={sticky} alt="Gym" width={"315px"} />
         {gymeData.userGoals && (
-          <Goals
+          <List
             title={gymeData.userGoals.title}
             goals={gymeData.userGoals.goals}
           />

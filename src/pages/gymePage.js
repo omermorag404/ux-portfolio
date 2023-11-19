@@ -27,7 +27,9 @@ export const GymeApp = () => {
         <img src={gym} alt="Gym" width={"315px"} />
       </Section>
       <Section>
-        <img src={stretching} alt="Gym" width={"315px"} />
+        <Content alignItems="center">
+          <img src={stretching} alt="Gym" width={"315px"} />
+        </Content>
         <Content>
           <H3>{gymeData.challenge.title}</H3>
           <P>{gymeData.challenge.content}</P>
@@ -38,7 +40,9 @@ export const GymeApp = () => {
           <H3>{gymeData.research.title}</H3>
           <P>{gymeData.research.content}</P>
         </Content>
-        <img src={weights} alt="Gym" width={"315px"} />
+        <Content alignItems="center">
+          <img src={weights} alt="Gym" width={"315px"} />
+        </Content>
       </Section>
       <Section color={colors.gray100}>
         {gymeData.data.map((number, index) => (
@@ -59,8 +63,9 @@ export const GymeApp = () => {
             goals={gymeData.businessGoals.goals}
           />
         )}
-
-        <img src={sticky} alt="Gym" width={"315px"} />
+        <Content alignItems="center">
+          <img src={sticky} alt="Gym" width={"315px"} />
+        </Content>
         {gymeData.userGoals && (
           <List
             title={gymeData.userGoals.title}

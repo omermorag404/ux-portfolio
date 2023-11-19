@@ -25,7 +25,7 @@ export const Persona = ({ gymeData }) => {
     padding: ${spacing.md};
     border-radius: 8px;
     border: 1px solid ${colors.gray100};
-    width: clamp(315px, 40%, 1280px);
+    width: clamp(315px, 100%, 1280px);
 
     @media (max-width: 767px) {
       display: flex;

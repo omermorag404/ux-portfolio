@@ -3,11 +3,12 @@ import colors from "./colors";
 import spacing from "./spacing";
 import sportapp from "../assets/img/gyme/sportapp.png";
 
-export const Section = styled.div`
+export const Section = styled.section`
   display: flex;
-  max-width: 1280;
+  width: clamp(315px, 100vw, 1280px);
   background-color: ${(props) => props.color || colors.white};
-  justify-content: center;
+  // justify-content: center;
+  justify-content: space-around;
   align-items: stretch;
   gap: ${spacing.xxl};
   flex-wrap: wrap;
@@ -21,7 +22,7 @@ flex-wrap: wrap;
 justify-content: center; 
 align-items: ${(props) => props.alignItems || "flex-start"};
 gap: ${spacing.md};
-width: clamp(315px, 40%, 490px);
+width: clamp(315px, 100vw, 490px);
 
 @media (max-width: 767px) {
   width: 75vw;
@@ -33,7 +34,7 @@ export const Layout = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: center;
 `;
 export const Photo = styled.div`
   width: 100%;
@@ -49,7 +50,7 @@ export const Photo = styled.div`
 export const CoverPhoto = styled.div`
   display: flex;
   flex-wrap: nowrap;
-
+  width: 100%;
   height: 40vh;
   flex-direction: column;
   align-items: center;
